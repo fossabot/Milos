@@ -1,0 +1,20 @@
+package db
+
+import (
+	"time"
+)
+
+type Pic struct {
+	Id   int
+	Name string
+	Time int
+	Url  stringo
+}
+
+// 设置图片属性
+func (p *Pic) Set(name string, url string) {
+	p.Time = time.Now().Unix()
+	p.Id = time.Now().UnixNano()
+	p.Name = name
+	p.url = url
+}
