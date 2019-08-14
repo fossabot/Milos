@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"html/template"
+	"io/ioutil"
+	"log"
 
 	"time"
 
@@ -10,15 +12,14 @@ import (
 
 // Index 主页面
 func Index(c *gin.Context) {
-	html := template.Must(template.ParseFiles("views/index.html"))
-
-	data := struct {
-		Year int
-	}{
-		Year: time.Now().Year(),
+	b, err := ioutil.ReadFile("views/index.html")
+	if err != nil {
+		log.Println("err:,no such file:views/index.html")
 	}
+	s := string(b)
 
-	html.Execute(c.Writer, data)
+	c.Header("Content-Type", "text/html; charset=utf-8")
+	c.String(200, s)
 }
 
 // LoginPage 登陆页面

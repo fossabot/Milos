@@ -33,18 +33,21 @@ func PostFile(c *gin.Context) {
 	fileurl, objectname := aliyun.Upload(file, path.Ext(header.Filename))
 	delurl := "delete/" + objectname
 
-	// TODO:实现SM的API
-
 	c.JSON(http.StatusOK, gin.H{
-		"code": "success",
+		"success": "true",
+		"code":    "success",
+		"message": "Upload success.",
 		"data": gin.H{
-			"width":    imgconf.Width,
-			"height":   imgconf.Height,
-			"filename": header.Filename,
-			"size":     header.Size,
-			"ip":       c.ClientIP(),
-			"url":      fileurl,
-			"delete":   delurl,
+			"width":     imgconf.Width,
+			"height":    imgconf.Height,
+			"filename":  header.Filename,
+			"storename": "unknow.png", //TODO
+			"hash":      "none",       //TODO
+			"size":      header.Size,
+			"ip":        c.ClientIP(),
+			"url":       fileurl,
+			"delete":    delurl,
+			"page":      fileurl, //TODO: 设计一个page页面
 		},
 	})
 }

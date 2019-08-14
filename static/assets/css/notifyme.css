@@ -1,0 +1,54 @@
+.notify{padding: 10px;color:#fff;}
+.notify[data-position="bottom"]{right:0;left:0;bottom:0}
+.notify[data-position="top"]{right:0;left:0;top:0}
+.notify[data-position="right"]{right:0;bottom:0;top:0;max-width:300px}
+.notify[data-position="left"]{left:0;top:0;bottom:0;max-width:300px}
+.notify[data-notify='success']{background:#15cc1f}.notify[data-notify='info']{background:#2780e3}
+.notify[data-notify='error']{background:#f32750}.notify[data-notify='default']{background:#cf80ad}
+.notify .notify-close{cursor: pointer;color: #fff;padding: 0px 15px;font-size: 20px;text-decoration: none;border: 2px solid #fff;}
+
+.notify h1{margin:5px 0 10px 0;text-transform:uppercase;font-size: 20px;font-weight: 900;color:#fff;}
+.notify{background: -webkit-linear-gradient(left,#c56161 ,#9e9e5e,#24aeab, #2780e3)!important;background: -o-linear-gradient(left,#c56161 ,#9e9e5e,#24aeab, #2780e3)!important;background: -moz-linear-gradient(left,#c56161 ,#9e9e5e,#24aeab, #2780e3)!important;}
+.accepr_box{}
+.accept_to_chat {
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    background: -webkit-linear-gradient(right, #e06969 , #2780e3); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #e06969 , #2780e3); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #e06969 , #2780e3); /* Firefox 3.6 - 15 */
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 150px;
+    right: 0px;
+    width: 150px;
+    max-width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.fixed-top {
+    position:unset;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+@media(max-width:768px){
+    .accept_to_chat{
+        margin-right: 0px;
+        position: unset;
+        min-width: 100%;
+        border-radius: 0px;
+        background-color: #2780e3;
+    }
+
+}
+.notify-content a{
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.notify-content a:hover{
+  text-decoration: none;
+  color: #e0e0e0;
+}
